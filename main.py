@@ -1,24 +1,26 @@
-from produto_service import adicionar_produto , listar_produtos
+from produto_service import adicionar_produto , listar_produtos , apagar_produto , menu_principal
 
-while True:
-    print("\nMenu Principal")
-    print("1 - Adicionar Produto")
-    print("2 - Listar Produtos")
-    print("3 - Sair")
+menu_principal()
 
-    opcao = input("Escolha uma opção: ")
+opcao = input("Escolha uma opção: ")
 
-    if opcao == "1":
-        nome = input("Nome do Produto: ")
-        preco = float(input("Preço: "))
-        estoque = int(input("Estoque: "))
-        adicionar_produto(nome, preco, estoque)
-        print("Produto adicionado com sucesso!")
+if opcao == "1":
+    nome = input("Nome do Produto: ")
+    preco = float(input("Preço: "))
+    estoque = int(input("Estoque: "))
+    adicionar_produto(nome, preco, estoque)
+    print("Produto adicionado com sucesso!")
 
-    elif opcao == "2":
-        produtos = listar_produtos()
-        for p in produtos:
-            print(p)
+elif opcao == "2":
+    produtos = listar_produtos()
+    for p in produtos:
+        print(p)
 
-    elif opcao == "3":
-        break
+elif opcao == "3":    
+    nome = input("Nome do Produto: ")
+    input("VOCE QUER REALMENTE APAGAR O PRODUTO? (S/N)").lower
+    apagar_produto(nome)
+    print("Produto Apagado com sucesso !")
+    print(nome)
+
+menu_principal()

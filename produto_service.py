@@ -1,5 +1,15 @@
 from database import conectar
 
+
+
+def menu_principal():
+    print("\nMenu Principal")
+    print("1 - Adicionar Produto")
+    print("2 - Listar Produtos")
+    print("3 - Apagar Produtos")
+    print("4 - Alguma coisa")
+    print("5 - Sair")
+
 def adicionar_produto(nome, preco, estoque):
     conexao = conectar()
     cursor = conexao.cursor()
@@ -15,3 +25,11 @@ def listar_produtos():
     produtos = cursor.fetchall()
     conexao.close()
     return produtos
+
+def apagar_produto(nome):
+    conexao = conectar()
+    cursor = conexao.cursor()
+    cursor.execute(f"DELETE FROM produto WHERE nome='{nome}';")
+    conexao.commit()
+    conexao.close()
+    return nome

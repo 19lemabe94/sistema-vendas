@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from produto_service import adicionar_produto, listar_produtos
+from produto_service import adicionar_produto , listar_produtos , apagar_produto , menu_principal
 
 app = Flask(__name__)
 
